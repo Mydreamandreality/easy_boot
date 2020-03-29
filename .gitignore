@@ -20,7 +20,7 @@ target/
 *.ipr
 
 ### config ###
-*.yml
+conding\src\main\resources\application.yml
 
 ### NetBeans ###
 /nbproject/private/
