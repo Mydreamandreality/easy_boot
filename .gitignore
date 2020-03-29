@@ -19,6 +19,9 @@ target/
 *.iml
 *.ipr
 
+### config ###
+conding\src\main\resources\application.yml
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
