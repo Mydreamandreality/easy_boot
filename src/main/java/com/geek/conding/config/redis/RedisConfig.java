@@ -1,4 +1,4 @@
-package com.geek.conding.config;
+package com.geek.conding.config.redis;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.cache.CacheManager;
@@ -15,7 +15,10 @@ import org.springframework.data.redis.serializer.*;
 import java.time.Duration;
 
 /**
- * @author Administrator
+ * @Author 张耀烽
+ * @Date Created in 2020/3/31 22:10
+ * @Version v1.0
+ * @Description Redis配置
  */
 @Configuration
 public class RedisConfig extends CachingConfigurerSupport {
