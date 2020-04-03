@@ -1,5 +1,7 @@
 package com.geek.conding.controller;
 
+import com.geek.conding.base.GeekException;
+import com.geek.conding.constants.enums.GeekExceptionMsg;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -14,6 +16,6 @@ public class IndexController {
 
     @GetMapping(value = "/hello/{name}")
     public String Index(@PathVariable("name") String name) {
-        return "hello" + name;
+        throw new GeekException(GeekExceptionMsg.SERVICE_ERROR);
     }
 }

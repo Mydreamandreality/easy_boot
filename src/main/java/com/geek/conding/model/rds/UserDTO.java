@@ -1,7 +1,8 @@
-package com.geek.conding.model;
+package com.geek.conding.model.rds;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
@@ -12,6 +13,7 @@ import java.io.Serializable;
  * @Description user model
  */
 @Data
+@Accessors(chain = true)
 @TableName("sys_user")
 public class UserDTO implements Serializable {
 

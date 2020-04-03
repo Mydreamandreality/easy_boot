@@ -1,7 +1,7 @@
 package com.geek.conding.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.geek.conding.model.UserDTO;
+import com.geek.conding.model.rds.UserDTO;
 
 import java.util.List;
 

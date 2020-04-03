@@ -15,4 +15,6 @@ public class ElasticsearchApi {
 
     @Autowired
     private JestClient jestClient;
+
+
 }

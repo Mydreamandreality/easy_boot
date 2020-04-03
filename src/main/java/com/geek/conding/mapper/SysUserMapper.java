@@ -1,7 +1,7 @@
 package com.geek.conding.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.geek.conding.model.UserDTO;
+import com.geek.conding.model.rds.UserDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
