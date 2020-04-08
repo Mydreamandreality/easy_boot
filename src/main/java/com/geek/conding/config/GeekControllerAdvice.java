@@ -22,6 +22,7 @@ public class GeekControllerAdvice {
     @ResponseBody
     @ExceptionHandler(GeekException.class)
     public ResponseEntity<GeekExceptionMsg> geekException(GeekException e, HttpServletRequest request) {
+        //构建请求的URI 写入到Redis队列中
         return RenderResponse.responseErrorMsg(e.getCode(), e.getMessage(), e.getHttpStatus(), e.getRequestId());
     }
 
@@ -29,6 +30,7 @@ public class GeekControllerAdvice {
     @ResponseBody
     @ExceptionHandler(Exception.class)
     public ResponseEntity<GeekExceptionMsg> sysException(Exception e, HttpServletRequest request) {
+        //构建请求的URI 写入到Redis队列中
         return RenderResponse.responseErrorMsg(GeekExceptionMsg.SERVER_ERROR);
     }
 }
