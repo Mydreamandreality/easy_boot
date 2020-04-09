@@ -3,6 +3,7 @@ package com.geek.conding.utils.bean;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
 /**
  * @Author 张耀烽
@@ -10,6 +11,7 @@ import org.springframework.context.ApplicationContextAware;
  * @Version v1.0
  * @Description Spring的ApplicationContext的持有者,可以用静态方法的方式获取spring容器中的bean
  */
+@Component
 public class SpringContextHolder implements ApplicationContextAware {
 
     private static ApplicationContext applicationContext;

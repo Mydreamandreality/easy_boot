@@ -8,7 +8,9 @@
     </resultMap>
 
     <select id="getUserAll" resultType="com.geek.conding.model.rds.UserDTO">
-        select * from sys_user
+        SELECT
+        id,name
+        FROM sys_user
     </select>
 
 </mapper>

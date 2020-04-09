@@ -1,6 +1,9 @@
 package com.geek.conding.controller;
 
+import com.geek.conding.annotaction.SysLog;
 import com.geek.conding.constants.ApplicationConstants;
+import com.geek.conding.constants.enums.LogContentEnum;
+import com.geek.conding.constants.enums.LogTypeEnum;
 import com.geek.conding.constants.response.ServiceResult;
 import com.geek.conding.utils.bean.ApplicationHolder;
 import com.google.common.collect.ImmutableMap;
@@ -23,6 +26,7 @@ import java.util.Properties;
 @Slf4j
 public class IndexController {
 
+    @SysLog(logType = LogTypeEnum.GET_SERVICE_LOG, logContent = LogContentEnum.GET_INDEX)
     @GetMapping(value = "/hello/{name}")
     @ApiOperation(value = "服务信息接口", notes = "提供服务基础数据")
     public ServiceResult Index(@PathVariable("name") String name) {
@@ -35,7 +39,7 @@ public class IndexController {
                 .put("limiting", serverPro.getProperty("limiting"))
                 .build();
 
-        log.info("你好，{}: 欢迎访问Geek项目!", name);
+        log.info("hello，{}: 欢迎访问Geek项目!", name);
 
         return ServiceResult.success(serverMap);
     }

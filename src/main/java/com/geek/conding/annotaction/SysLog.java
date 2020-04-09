@@ -1,5 +1,8 @@
 package com.geek.conding.annotaction;
 
+import com.geek.conding.constants.enums.LogContentEnum;
+import com.geek.conding.constants.enums.LogTypeEnum;
+
 import java.lang.annotation.*;
 
 /**
@@ -18,12 +21,12 @@ public @interface SysLog {
      *
      * @return
      */
-    String logType();
+    LogTypeEnum logType() default LogTypeEnum.SERVICE_LOG;
 
     /**
      * 日志内容
      *
      * @return
      */
-    String logContent();
+    LogContentEnum logContent();
 }
