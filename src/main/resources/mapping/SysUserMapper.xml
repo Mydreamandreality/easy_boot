@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.geek.conding.mapper.SysUserMapper">
 
-    <resultMap id="BaseResultMap" type="com.geek.conding.model.rds.UserDTO">
+    <resultMap id="BaseResultMap" type="com.geek.conding.model.rds.SysUserDTO">
         <result column="id" jdbcType="INTEGER" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
     </resultMap>
 
-    <select id="getUserAll" resultType="com.geek.conding.model.rds.UserDTO">
+    <select id="getUserAll" resultType="com.geek.conding.model.rds.SysUserDTO">
         SELECT
         id,name
         FROM sys_user

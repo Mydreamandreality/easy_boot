@@ -15,7 +15,7 @@ import java.io.Serializable;
 @Data
 @Accessors(chain = true)
 @TableName("sys_user")
-public class UserDTO implements Serializable {
+public class SysUserDTO implements Serializable {
 
     private static final long serialVersionUID = -6226593098773490023L;
 

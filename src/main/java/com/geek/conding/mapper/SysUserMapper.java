@@ -1,7 +1,7 @@
 package com.geek.conding.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.geek.conding.model.rds.UserDTO;
+import com.geek.conding.model.rds.SysUserDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -13,12 +13,12 @@ import java.util.List;
  * @Description user mapper
  */
 @Mapper
-public interface SysUserMapper extends BaseMapper<UserDTO> {
+public interface SysUserMapper extends BaseMapper<SysUserDTO> {
 
     /**
      * 获取所有的用户信息
      *
      * @return
      */
-    List<UserDTO> getUserAll();
+    List<SysUserDTO> getUserAll();
 }
