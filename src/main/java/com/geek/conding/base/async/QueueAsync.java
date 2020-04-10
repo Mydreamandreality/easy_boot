@@ -29,14 +29,14 @@ public class QueueAsync {
     public void sendQueueSysLog(String ip, String uri, String methodName, String logTypeName, String logDesc) {
         ImmutableMap<String, String> queueMap = ImmutableMap.<String, String>builder()
                 //用户信息暂时为null
-                .put("user", null)
+                .put("user", "")
                 .put("ip", ip)
                 .put("uri", uri)
                 .put("methodName", methodName)
                 .put("logTypeName", logTypeName)
                 .put("logDesc", logDesc)
                 .build();
-        redisTemplate.opsForList().leftPush("syslog:log", queueMap);
+        redisTemplate.opsForList().rightPush("syslog:log", queueMap);
     }
 
 
@@ -48,7 +48,7 @@ public class QueueAsync {
     @Async(TaskConstants.TASK_EXECUTOR)
     public void sendSysLog(String ip, String uri, String methodName, String logTypeName, String logDesc) {
         ImmutableMap<String, String> queueMap = ImmutableMap.<String, String>builder()
-                .put("user", null)
+                .put("user", "")
                 .put("ip", ip)
                 .put("uri", uri)
                 .put("methodName", methodName)
