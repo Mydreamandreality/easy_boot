@@ -1,6 +1,7 @@
 package com.geek.conding.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.geek.conding.model.rds.SysUserDTO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -20,5 +21,13 @@ public interface SysUserMapper extends BaseMapper<SysUserDTO> {
      *
      * @return
      */
-    List<SysUserDTO> getUserAll();
+    List<SysUserDTO> queryUserAll();
+
+
+    /**
+     * 分页获取所有的用户信息
+     *
+     * @return
+     */
+    List<SysUserDTO> queryUserAllByPage();
 }

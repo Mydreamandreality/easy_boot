@@ -7,7 +7,13 @@
         <result column="name" jdbcType="VARCHAR" property="name"/>
     </resultMap>
 
-    <select id="getUserAll" resultType="com.geek.conding.model.rds.SysUserDTO">
+    <select id="queryUserAll" resultMap="BaseResultMap">
+        SELECT
+        id,name
+        FROM sys_user
+    </select>
+
+    <select id="queryUserAllByPage" resultMap="BaseResultMap">
         SELECT
         id,name
         FROM sys_user

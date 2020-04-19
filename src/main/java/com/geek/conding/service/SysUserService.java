@@ -2,6 +2,7 @@ package com.geek.conding.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.geek.conding.model.rds.SysUserDTO;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -18,5 +19,14 @@ public interface SysUserService extends IService<SysUserDTO> {
      *
      * @return
      */
-    List<SysUserDTO> getUserAll();
+    List<SysUserDTO> queryUserAll();
+
+    /**
+     * 分页获取所有用户
+     *
+     * @param pageSize 页数
+     * @param pageNum  页量
+     * @return
+     */
+    PageInfo<SysUserDTO> queryUserAllByPage(Integer pageNum, Integer pageSize);
 }

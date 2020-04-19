@@ -24,6 +24,19 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
 
+#helper分页配置
+pagehelper:
+  #标识是哪一种数据库
+  helperDialect: mysql
+  #启用合理化，如果pageNum<1会查询第一页，如果pageNum>pages会查询最后一页
+  reasonable: true
+  params: count=countSql
+  #支持通过 Mapper 接口参数来传递分页参数
+  supportMethodsArguments: true
+  #pageSize=0 就会查询出全部的结果（相当于没有执行分页查询）
+  page-size-zero: true
+
+#SQL打印级别配置
 logging:
   level:
     com.geek.conding.mapper: debug
