@@ -41,6 +41,10 @@ logging:
   level:
     com.geek.conding.mapper: debug
 
+#LogBack
+log:
+  path: geek-logs
+
 #GEEK项目版本号
 geek-server:
   #发行版本号
