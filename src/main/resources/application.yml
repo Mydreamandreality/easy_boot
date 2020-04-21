@@ -5,7 +5,7 @@ spring:
 mybatis-plus:
   mapper-locations: classpath:mapping/*Mapper.xml
   #实体扫描，逗号或者分号分隔
-  type-aliases-package: com.geek.conding.model
+  type-aliases-package: com.geek.conding.business.model
   #数据库配置
   global-config:
     db-config:
@@ -39,7 +39,7 @@ pagehelper:
 #SQL打印级别配置
 logging:
   level:
-    com.geek.conding.mapper: debug
+    com.geek.conding.business.mapper: debug
 
 #LogBack
 log:
