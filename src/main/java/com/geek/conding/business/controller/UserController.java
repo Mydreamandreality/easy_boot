@@ -23,7 +23,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(value = "/api")
-@Api(value = "/api", tags = "sys_user接口mock")
+@Api(value = "/api", tags = "geek平台-sys_user接口mock")
 public class UserController {
 
     @Autowired
@@ -35,6 +35,7 @@ public class UserController {
         List<SysUserDTO> userDTOS = sysUserService.queryUserAll();
         return ServiceResult.success(userDTOS);
     }
+
 
     @GetMapping(value = "/page/users")
     @ApiOperation(value = "分页查询所有用户接口", notes = "分页查询所有用户接口")

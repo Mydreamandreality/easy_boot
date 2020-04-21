@@ -22,7 +22,7 @@ import java.util.Properties;
  */
 @RestController
 @RequestMapping(value = "/index")
-@Api(value = "/api", tags = "程序自检入口")
+@Api(value = "/api", tags = "geek平台-程序自检入口")
 @Slf4j
 public class IndexController {
 

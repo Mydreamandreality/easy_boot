@@ -1,6 +1,8 @@
 package com.geek.conding.business.controller.search;
 
+import com.geek.conding.business.base.GeekException;
 import com.geek.conding.business.constants.ElasticsearchConstants;
+import com.geek.conding.business.constants.enums.GeekExceptionMsg;
 import com.geek.conding.business.model.es.FlowDTO;
 import com.geek.conding.business.constants.response.ServiceResult;
 import com.geek.conding.utils.SnowFlake;
@@ -40,9 +42,7 @@ public class SearchInitController {
             DocumentResult documentResult = jestClient.execute(index);
             return ServiceResult.success(documentResult.getJsonString());
         } catch (IOException e) {
-            //抛出自定义异常
+            throw new GeekException(GeekExceptionMsg.ES_INIT_ERROR);
         }
-        //这里补充自定义异常
-        throw new RuntimeException("");
     }
 }

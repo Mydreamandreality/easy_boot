@@ -54,3 +54,6 @@ https://blog.csdn.net/youbitch1
 - 1、集成Elasticsearch、Redis、Swagger等
 - 2、增加系统日志切面注解
 - 3、增加异步队列推送系统日志
+- 4、新增logback配置
+- 5、修改项目目录结构
+- 6、新增Redis订阅/发布案例
