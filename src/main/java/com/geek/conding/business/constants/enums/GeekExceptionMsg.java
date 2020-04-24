@@ -15,7 +15,9 @@ public enum GeekExceptionMsg {
 
     SERVICE_ERROR("ServiceError", "ServiceErrorMsg", HttpStatus.BAD_REQUEST, SnowFlake.nextId()),
 
-    ES_INIT_ERROR("EsInitError", "InitIoError", HttpStatus.INTERNAL_SERVER_ERROR, SnowFlake.nextId());
+    ES_INIT_ERROR("EsInitError", "InitIoError", HttpStatus.INTERNAL_SERVER_ERROR, SnowFlake.nextId()),
+
+    BAD_REQUEST_ERROR("RequestError", "RequestParamError", HttpStatus.BAD_REQUEST, SnowFlake.nextId());
 
     private String code;
 

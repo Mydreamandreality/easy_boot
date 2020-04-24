@@ -8,10 +8,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -43,5 +40,28 @@ public class UserController {
                                                                   @ApiParam(value = "page_size") @RequestParam(value = "page_size") Integer pageSize) {
         PageInfo<SysUserDTO> userDTOIPage = sysUserService.queryUserAllByPage(pageNum, pageSize);
         return ServiceResult.success(userDTOIPage);
+    }
+
+    @PostMapping(value = "/user")
+    @ApiOperation(value = "新增用户信息", notes = "新增用户信息")
+    public ServiceResult<String> queryUserAll(@RequestBody SysUserDTO sysUserDTO) {
+        sysUserService.addUserInfo(sysUserDTO);
+        return ServiceResult.success("新增用户信息成功");
+    }
+
+
+    @PutMapping(value = "/user")
+    @ApiOperation(value = "更新用户信息", notes = "更新用户信息")
+    public ServiceResult<String> setUserInfo(@RequestBody SysUserDTO sysUserDTO) {
+        sysUserService.setUserInfo(sysUserDTO);
+        return ServiceResult.success("更新用户信息成功");
+    }
+
+
+    @DeleteMapping(value = "/user/{id}")
+    @ApiOperation(value = "删除指定用户信息", notes = "查询所有用户接口")
+    public ServiceResult<String> queryUserAll(@PathVariable("id") Integer id) {
+        sysUserService.delUserInfo(id);
+        return ServiceResult.success("用户信息id {" + id + "} 删除成功");
     }
 }

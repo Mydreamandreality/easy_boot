@@ -19,4 +19,27 @@
         FROM sys_user
     </select>
 
+    <insert id="addUserInfo" parameterType="com.geek.conding.business.model.rds.SysUserDTO">
+        INSERT INTO sys_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name!=null">name,</if>
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            <if test="name!=null">#{name},</if>
+        </trim>
+    </insert>
+
+    <delete id="delUserInfo">
+        DELETE
+        FROM sys_user
+        WHERE id = #{id}
+    </delete>
+
+    <update id="setUserInfo">
+        UPDATE sys_user
+        <set>
+            <if test="name!=null">name=#{name}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
 </mapper>

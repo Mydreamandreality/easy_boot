@@ -57,3 +57,4 @@ https://blog.csdn.net/youbitch1
 - 4、新增logback配置
 - 5、修改项目目录结构
 - 6、新增Redis订阅/发布案例
+- 7、新增mybatis-plus CRUD案例

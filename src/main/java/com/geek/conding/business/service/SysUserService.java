@@ -3,6 +3,7 @@ package com.geek.conding.business.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.geek.conding.business.model.rds.SysUserDTO;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -29,4 +30,25 @@ public interface SysUserService extends IService<SysUserDTO> {
      * @return
      */
     PageInfo<SysUserDTO> queryUserAllByPage(Integer pageNum, Integer pageSize);
+
+    /**
+     * 新增用户信息
+     *
+     * @param sysUserDTO
+     */
+    void addUserInfo(SysUserDTO sysUserDTO);
+
+    /**
+     * 删除用户信息
+     *
+     * @param id
+     */
+    void delUserInfo(@Param("id") Integer id);
+
+    /**
+     * 更新用户信息
+     *
+     * @param sysUserDTO
+     */
+    void setUserInfo(SysUserDTO sysUserDTO);
 }

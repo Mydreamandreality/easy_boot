@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.geek.conding.business.mapper.SysLogMapper">
+
+    <resultMap id="BaseResultMap" type="com.geek.conding.business.model.rds.SysLogDTO">
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="ip_address" jdbcType="VARCHAR" property="ipAddress"/>
+        <result column="uri" jdbcType="VARCHAR" property="uri"/>
+        <result column="u_id" jdbcType="VARCHAR" property="uId"/>
+        <result column="t_id" jdbcType="VARCHAR" property="tId"/>
+        <result column="method" jdbcType="VARCHAR" property="method"/>
+        <result column="log_title" jdbcType="VARCHAR" property="logTitle"/>
+        <result column="log_content" jdbcType="VARCHAR" property="logContent"/>
+        <result column="create_time" jdbcType="VARCHAR" property="createTime"/>
+        <result column="status" jdbcType="VARCHAR" property="status"/>
+
+    </resultMap>
+
+    <select id="querySysLogAll" resultType="Map">
+        SELECT l.*,
+        u.name
+        FROM sys_log AS l
+        INNER JOIN sys_user AS u on l.u_id= u.id
+    </select>
+
+</mapper>
