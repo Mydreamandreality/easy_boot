@@ -51,4 +51,13 @@ public interface SysUserMapper extends BaseMapper<SysUserDTO> {
      * @param sysUserDTO
      */
     void setUserInfo(SysUserDTO sysUserDTO);
+
+
+    /**
+     * 查看用户订单信息
+     *
+     * @param id
+     * @return
+     */
+    SysUserDTO queryUserOrderByUserId(@Param("id") Integer id);
 }

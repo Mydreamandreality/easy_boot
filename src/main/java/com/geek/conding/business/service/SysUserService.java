@@ -51,4 +51,7 @@ public interface SysUserService extends IService<SysUserDTO> {
      * @param sysUserDTO
      */
     void setUserInfo(SysUserDTO sysUserDTO);
+
+    SysUserDTO queryUserOrderByUserId(Integer id);
+
 }

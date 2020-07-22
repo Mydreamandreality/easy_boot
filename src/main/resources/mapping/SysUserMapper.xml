@@ -3,8 +3,25 @@
 <mapper namespace="com.geek.conding.business.mapper.SysUserMapper">
 
     <resultMap id="BaseResultMap" type="com.geek.conding.business.model.rds.SysUserDTO">
-        <result column="id" jdbcType="INTEGER" property="id"/>
+        <id column="u_id" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="account_id" jdbcType="VARCHAR" property="accountId"/>
+        <collection property="memberLevel" ofType="com.geek.conding.business.model.rds.SysMemberLevelDTO">
+            <id column="m_id" property="id"/>
+            <result column="level_code" jdbcType="INTEGER" property="levelCode"/>
+            <result column="level_name" jdbcType="VARCHAR" property="levelName"/>
+            <result column="is_show" jdbcType="INTEGER" property="isShow"/>
+            <result column="level_des" jdbcType="VARCHAR" property="levelDes"/>
+            <result column="create_time" jdbcType="DATE" property="createTime"/>
+        </collection>
+        <collection property="orders" javaType="ArrayList" ofType="com.geek.conding.business.model.rds.SysOrderDTO">
+            <id column="o_id" property="id"/>
+            <result column="order_id" jdbcType="INTEGER" property="orderId"/>
+            <result column="order_name" jdbcType="VARCHAR" property="orderName"/>
+            <result column="order_time" jdbcType="DATE" property="orderTime"/>
+            <result column="order_money" jdbcType="DECIMAL" property="orderMoney"/>
+        </collection>
     </resultMap>
 
     <select id="queryUserAll" resultMap="BaseResultMap">
@@ -42,4 +59,17 @@
         </set>
         WHERE id = #{id}
     </update>
+
+    <select id="queryUserOrderByUserId" resultMap="BaseResultMap">
+        SELECT
+            u.id AS u_id,
+            o.id AS o_id,
+            m.id AS m_id,
+            u.name,u.address,u.account_id,o.order_name,o.order_money,o.order_id,o.order_time,m.level_name
+        FROM
+	        sys_user AS u
+	    left join sys_order AS o ON u.id = o.user_id
+	    left join sys_member_level as m on u.member_level = m.level_code
+	    where u.id = #{id}
+    </select>
 </mapper>

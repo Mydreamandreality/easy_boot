@@ -65,4 +65,9 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUserDTO> i
         }
         baseMapper.setUserInfo(sysUserDTO);
     }
+
+    @Override
+    public SysUserDTO queryUserOrderByUserId(Integer id) {
+        return baseMapper.queryUserOrderByUserId(id);
+    }
 }

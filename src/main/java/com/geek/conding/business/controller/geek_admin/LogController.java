@@ -1,4 +1,4 @@
-package com.geek.conding.business.controller;
+package com.geek.conding.business.controller.geek_admin;
 
 import com.geek.conding.business.constants.response.ServiceResult;
 import com.geek.conding.business.model.rds.SysLogDTO;

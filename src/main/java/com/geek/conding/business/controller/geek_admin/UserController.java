@@ -1,4 +1,4 @@
-package com.geek.conding.business.controller;
+package com.geek.conding.business.controller.geek_admin;
 
 import com.geek.conding.business.model.rds.SysUserDTO;
 import com.geek.conding.business.service.impl.SysUserServiceImpl;
